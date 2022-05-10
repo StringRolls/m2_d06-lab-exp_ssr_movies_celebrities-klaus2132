@@ -1,0 +1,26 @@
+<h2>Make your movie</h2>
+<form action="/movies/create" method="POST">
+
+<label>Title
+    <input type="text" name="title" placeholder="Haaland">
+</label><br>
+
+<label>Genre
+    <input type="text" name="genre" placeholder="...">
+</label><br>
+
+<label>Plot
+    <input type="text" name="plot" placeholder="...">
+</label><br>
+
+    <label for="cast"> Cast: </label>
+    <select name="cast" multiple>
+      <option disable selected value=""></option>
+      {{#each celebrities}}
+        <option value="{{this._id}}">{{name}}</option>
+      {{/each}}
+    </select>
+
+<button type="submit">Create!</button>
+
+</form>
